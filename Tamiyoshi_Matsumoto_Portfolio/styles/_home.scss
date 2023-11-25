@@ -1,0 +1,416 @@
+@use "../styles/parts/common" as *;
+@use "globals/index" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Playfair Display", serif;
+}
+
+#page_top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  color: #737373;
+  padding: 10px;
+  border: solid 1px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px -6px rgba(0, 0, 0, 0.5),
+    0 3px 10px -4px rgba(0, 0, 0, 0.2);
+}
+.hidden {
+  display: none;
+}
+
+.header {
+  font-family: "Playfair Display", serif;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  @include mq(lg) {
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    &:visited {
+      color: black;
+    }
+  }
+  &_icon {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    &_img img {
+      width: 50px;
+    }
+    &_text {
+      font-size: 3rem;
+    }
+  }
+  &_nav {
+    display: none;
+    @include mq(lg) {
+      display: block;
+    }
+  }
+  &_ul {
+    display: flex;
+  }
+
+  &_li {
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 4px;
+    font-size: 1.3rem;
+
+    &:nth-child(1) {
+      a:hover {
+        background-color: #d499b9;
+      }
+    }
+
+    &:nth-child(2) {
+      a:hover {
+        background-color: #2e294e;
+        color: white;
+      }
+    }
+
+    &:nth-child(3) {
+      a:hover {
+        background-color: #9055a2;
+      }
+    }
+
+    &:nth-child(4) {
+      a:hover {
+        background-color: #011638;
+        color: white;
+      }
+    }
+
+    a {
+      padding: 8px;
+    }
+  }
+}
+
+.main {
+  &_inner {
+    overflow: hidden;
+
+    .top {
+      position: relative;
+      @extend .mb-lg;
+
+      .circle {
+        &_animation {
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100vh;
+        }
+
+        &_text {
+          position: relative;
+          // top: 50%;
+          width: 200px; /* 直径 */
+          height: 200px; /* 直径 */
+          font-size: 20px;
+          text-align: center;
+          margin: auto;
+          transform: rotate(-80deg); /* 円の回転 */
+          animation: circleAnimation 20s linear infinite;
+
+          span {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 10px); /* 中心点、、文字サイズ分ずらす */
+            display: inline-block;
+            width: 20px; /* 文字サイズより小さくしない */
+            height: 100px; /* 半径 */
+            transform-origin: center bottom; /* 回転の基準点 */
+            transform: rotate(calc(var(--number) * 12deg));
+            // user-select: none;
+          }
+        }
+      }
+
+      .text_animation {
+        &01 {
+          position: absolute;
+          overflow: hidden;
+          top: 0;
+          right: 56%;
+          width: 720px;
+          font-size: 16rem;
+
+          &_right {
+            width: 200%;
+            animation: rightAnimation 40s linear infinite;
+
+            &_second {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 200%;
+              animation: rightAnimation 40s -20s linear infinite;
+            }
+          }
+        }
+
+        &02 {
+          position: absolute;
+          overflow: hidden;
+          top: 50%;
+          left: 80%;
+          width: 480px;
+          font-size: 9rem;
+
+          &_left {
+            width: 200%;
+            animation: leftAnimation 40s linear infinite;
+
+            &_second {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 200%;
+              animation: leftAnimation 40s -20s linear infinite;
+            }
+          }
+        }
+        &03 {
+          position: absolute;
+          overflow: hidden;
+          bottom: 0;
+          left: 28%;
+          width: 700px;
+          font-size: 15rem;
+
+          &_right {
+            width: 200%;
+            animation: rightAnimation 40s linear infinite;
+
+            &_second {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 200%;
+              animation: rightAnimation 40s -20s linear infinite;
+            }
+          }
+        }
+      }
+    }
+
+    .about {
+      background-color: #d499b9;
+      padding: 30px 50px;
+      border-radius: 70px 320px 180px 150px / 150px 150px 150px 140px;
+      @extend .mb-lg;
+      @extend .content-width;
+
+      &_title {
+        text-align: center;
+        @extend .font-2xl;
+        @extend .pb-sm;
+      }
+
+      &_inner {
+        display: block;
+        width: 100%;
+
+        @include mq(lg) {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &_img {
+          @extend .pb-sm;
+          @include mq(lg) {
+            width: 48%;
+          }
+
+          & > img {
+            width: 100%;
+            border-radius: 246px 324px 221px 216px / 295px 138px 256px 122px;
+          }
+        }
+
+        &_text {
+          @extend .pb-sm;
+          text-indent: 1rem;
+          @include mq(lg) {
+            width: 48%;
+          }
+        }
+      }
+    }
+
+    .works {
+      background-color: #2e294e;
+      color: white;
+      padding: 70px 100px;
+      border-radius: 700px 133px 379px 108px / 108px 109px 100px 350px;
+      @extend .content-width;
+      @extend .mb-lg;
+
+      &_title {
+        text-align: center;
+        @extend .font-2xl;
+        @extend .pb-sm;
+      }
+
+      &_inner {
+        display: grid;
+        justify-content: center;
+        grid-gap: 32px;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      }
+
+      &_content {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.174);
+        border-radius: 5px;
+        width: 100%;
+
+        & a {
+          color: white;
+          text-decoration: none;
+
+          &:visited {
+            color: white;
+          }
+        }
+
+        &_img {
+          & > img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .skill {
+      background-color: #9055a2;
+      padding: 30px 50px;
+      border-radius: 501px 695px 134px 642px / 349px 350px 350px 216px;
+      @extend .content-width;
+      @extend .mb-lg;
+
+      &_title {
+        text-align: center;
+        @extend .font-2xl;
+        @extend .pb-sm;
+      }
+
+      &_inner {
+        display: grid;
+        justify-content: center;
+        grid-gap: 28px;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      }
+
+      &_content {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.089);
+        border-radius: 10px;
+        gap: 20px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      h4 {
+        font-weight: 900;
+        @extend .font-md;
+      }
+    }
+
+    .contact {
+      background-color: #011638;
+      color: white;
+      padding: 30px 50px;
+      text-align: center;
+      border-radius: 253px 234px 475px 700px / 264px 219px 350px 350px;
+      @extend .content-width;
+      @extend .mb-lg;
+
+      &_title {
+        text-align: center;
+        @extend .font-2xl;
+        @extend .pb-sm;
+      }
+
+      &_inner {
+        display: block;
+        height: auto;
+        width: 100%;
+
+        &_text {
+          @extend .mb-sm;
+        }
+        &_img {
+          width: 100%;
+          & > a img {
+            width: 50px;
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+}
+
+// アニメーション設定
+@keyframes rightAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes leftAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes circleAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
