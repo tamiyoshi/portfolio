@@ -287,7 +287,7 @@
         display: grid;
         justify-content: center;
         grid-gap: 32px;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       }
 
       &_content {
@@ -330,7 +330,7 @@
         display: grid;
         justify-content: center;
         grid-gap: 28px;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       }
 
       &_content {
