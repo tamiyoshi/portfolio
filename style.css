@@ -315,7 +315,7 @@
   display: grid;
   justify-content: center;
   grid-gap: 32px;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .main_inner .works_content {
   padding: 10px;
@@ -345,7 +345,7 @@
   display: grid;
   justify-content: center;
   grid-gap: 28px;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .main_inner .skill_content {
   display: flex;
@@ -355,6 +355,7 @@
   padding: 10px;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .main_inner .skill h4 {
   font-weight: 900;
