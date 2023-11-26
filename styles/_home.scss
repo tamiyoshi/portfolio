@@ -22,7 +22,7 @@
   z-index: 100;
 
   &_inner {
-    width: 100%;
+    width: 160%;
     margin: auto;
 
     &_content {
@@ -30,7 +30,7 @@
       transform-origin: right top;
     }
     &_item {
-      width: 200%;
+      width: 320%;
       height: 25vh;
       background-color: rgb(0, 0, 0);
     }

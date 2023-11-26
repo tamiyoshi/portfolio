@@ -96,7 +96,7 @@
   z-index: 100;
 }
 .bg_inner {
-  width: 100%;
+  width: 160%;
   margin: auto;
 }
 .bg_inner_content {
@@ -104,7 +104,7 @@
   transform-origin: right top;
 }
 .bg_inner_item {
-  width: 200%;
+  width: 320%;
   height: 25vh;
   background-color: rgb(0, 0, 0);
 }
