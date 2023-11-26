@@ -9,11 +9,7 @@ splitTexts.forEach(
       s === "  " ? "  " : `<span style="--number: ${i + 1}">${s}</span>`)
 );
 circleElement.innerHTML = outputText;
-//
-//
-//
-//
-//
+
 // トップページ戻りボタン
 const ioDom = document.querySelector("#skill");
 const pageTopBtn = document.querySelector("#page_top");

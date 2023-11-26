@@ -19,6 +19,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: -1;
 
   &_inner {
     width: 160%;
@@ -141,6 +142,7 @@
 .main {
   &_inner {
     overflow: hidden;
+    z-index: 100;
 
     .top {
       position: relative;

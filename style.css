@@ -93,6 +93,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: -1;
 }
 .bg_inner {
   width: 160%;
@@ -200,6 +201,7 @@
 
 .main_inner {
   overflow: hidden;
+  z-index: 100;
 }
 .main_inner .top {
   position: relative;
