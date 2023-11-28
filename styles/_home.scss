@@ -32,7 +32,7 @@
     &_item {
       width: 320%;
       height: 25vh;
-      background-color: rgb(0, 0, 0);
+      background-color: $mainColor;
     }
   }
 }
@@ -43,12 +43,14 @@
   bottom: 30px;
   width: 50px;
   height: 50px;
-  color: #737373;
+  color: $mainColor;
   padding: 10px;
   border: solid 1px;
   border-radius: 50%;
   box-shadow: 0 2px 10px -6px rgba(0, 0, 0, 0.5),
     0 3px 10px -4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  text-align: center;
 }
 .hidden {
   display: none;
@@ -73,28 +75,38 @@
 
   a {
     text-decoration: none;
-    color: black;
+    color: $mainColor;
+
     &:visited {
-      color: black;
+      color: $mainColor;
     }
   }
+
   &_icon {
     display: flex;
     align-items: center;
     height: 80px;
-    &_img img {
+
+    &_img svg {
       width: 50px;
+
+      & g {
+        fill: $mainColor;
+      }
     }
+
     &_text {
       font-size: 3rem;
     }
   }
+
   &_nav {
     display: none;
     @include mq(lg) {
       display: block;
     }
   }
+
   &_ul {
     display: flex;
   }
@@ -145,8 +157,10 @@
     z-index: 100;
 
     .top {
+      color: $mainColor;
       position: relative;
       @extend .mb-lg;
+      z-index: -1;
 
       .circle {
         &_animation {

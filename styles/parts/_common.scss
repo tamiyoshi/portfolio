@@ -1,5 +1,6 @@
 @use "../globals" as *;
 
+// マージンボトム
 .mb-sm {
   margin-bottom: 16px !important;
 }
@@ -11,7 +12,7 @@
     margin-bottom: 150px !important;
   }
 }
-
+// パディングボトム
 .pb-sm {
   padding-bottom: 16px !important;
 }
@@ -24,6 +25,7 @@
   }
 }
 
+// 共通幅
 .content-width {
   width: 90%;
   margin: 0 auto;
