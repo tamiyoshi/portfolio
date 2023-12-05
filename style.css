@@ -140,11 +140,15 @@
   align-items: center;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5;
 }
 @media screen and (min-width: 960px) {
   .header {
     justify-content: space-between;
   }
+}
+.header.hide {
+  display: none;
 }
 .header a {
   text-decoration: none;
@@ -212,8 +216,10 @@
   color: rgb(0, 0, 0);
   position: relative;
   z-index: -1;
+  height: 100vh;
 }
 .main_inner .top .circle_animation {
+  position: fixed;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -243,7 +249,7 @@
   transform: rotate(calc(var(--number) * 12deg));
 }
 .main_inner .top .text_animation01 {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   top: 0;
   right: 56%;
@@ -262,7 +268,7 @@
   animation: rightAnimation 40s -20s linear infinite;
 }
 .main_inner .top .text_animation02 {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   top: 50%;
   left: 80%;
@@ -281,7 +287,7 @@
   animation: leftAnimation 40s -20s linear infinite;
 }
 .main_inner .top .text_animation03 {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   bottom: 0;
   left: 28%;

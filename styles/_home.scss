@@ -68,9 +68,14 @@
   align-items: center;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5;
 
   @include mq(lg) {
     justify-content: space-between;
+  }
+
+  &.hide {
+    display: none;
   }
 
   a {
@@ -161,9 +166,11 @@
       position: relative;
       @extend .mb-lg;
       z-index: -1;
+      height: 100vh;
 
       .circle {
         &_animation {
+          position: fixed;
           overflow: hidden;
           display: flex;
           justify-content: center;
@@ -199,7 +206,7 @@
 
       .text_animation {
         &01 {
-          position: absolute;
+          position: fixed;
           overflow: hidden;
           top: 0;
           right: 56%;
@@ -221,7 +228,7 @@
         }
 
         &02 {
-          position: absolute;
+          position: fixed;
           overflow: hidden;
           top: 50%;
           left: 80%;
@@ -242,7 +249,7 @@
           }
         }
         &03 {
-          position: absolute;
+          position: fixed;
           overflow: hidden;
           bottom: 0;
           left: 28%;

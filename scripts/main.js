@@ -1,7 +1,6 @@
 // spanで囲む為の記述
 const circleElement = document.querySelector(".circle_text");
 const splitTexts = circleElement.textContent.split("");
-
 let outputText = "";
 splitTexts.forEach(
   (s, i) =>
@@ -13,12 +12,10 @@ circleElement.innerHTML = outputText;
 // トップページ戻りボタン
 const ioDom = document.querySelector("#skill");
 const pageTopBtn = document.querySelector("#page_top");
-
 const options = {
   root: null,
   rootMargin: "800px",
 };
-
 const cb = function (entries) {
   entries.forEach((e) => {
     if (e.isIntersecting) {
@@ -30,7 +27,15 @@ const cb = function (entries) {
     }
   });
 };
-
 const io = new IntersectionObserver(cb, options);
-
 io.observe(ioDom);
+
+// ヘッダークローズ
+const header = document.querySelector(".header");
+let set_position = 0;
+window.addEventListener("scroll", function () {
+  set_position < document.documentElement.scrollTop
+    ? header.classList.add("hide")
+    : header.classList.remove("hide"),
+    (set_position = document.documentElement.scrollTop);
+});
