@@ -364,6 +364,7 @@
 .main_inner .works_content a {
   color: white;
   text-decoration: none;
+  font-size: 0.8rem;
 }
 .main_inner .works_content a:visited {
   color: white;
